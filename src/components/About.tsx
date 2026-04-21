@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Cybersecurity enthusiast and software engineer specializing in secure, scalable systems. Experienced in threat detection and network security, with a focus on leveraging AI tools and data-driven approaches to build intelligent, high-performance applications.
         </p>
       </div>
     </div>

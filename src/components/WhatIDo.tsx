@@ -90,21 +90,24 @@ const WhatIDo = () => {
               <h3>DEVELOP</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Build scalable, high-performance web and mobile applications using modern frameworks and AI-powered tools,
+                focusing on clean code, efficiency, and seamless user experience.
               </p>
+
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">JavaScript</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
                 <div className="what-tags">Next.js</div>
+                <div className="what-tags">Node.js</div>
                 <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">MySQL</div>
+                <div className="what-tags">AWS</div>
+                <div className="what-tags">OpenAI API</div>
+                <div className="what-tags">Docker</div>
+                <div className="what-tags">Git</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -131,19 +134,22 @@ const WhatIDo = () => {
               <h3>DESIGN</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Design intuitive and responsive user interfaces with a strong focus on usability, accessibility,
+                and modern UI/UX principles.
               </p>
+
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Adobe XD</div>
+                <div className="what-tags">Photoshop</div>
+                <div className="what-tags">UI/UX Design</div>
+                <div className="what-tags">Wireframing</div>
+                <div className="what-tags">Prototyping</div>
+                <div className="what-tags">Responsive Design</div>
+                <div className="what-tags">Accessibility</div>
+                <div className="what-tags">Tailwind CSS</div>
+                <div className="what-tags">Material UI</div>
               </div>
               <div className="what-arrow"></div>
             </div>
