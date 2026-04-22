@@ -13,26 +13,31 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 export default function setSplitText() {
   ScrollTrigger.config({ ignoreMobileResize: true });
   if (window.innerWidth < 900) return;
-  const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
-  const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
+
+  const paras = document.querySelectorAll<ParaElement>(".para");
+  const titles = document.querySelectorAll<ParaElement>(".title");
 
   const TriggerStart = window.innerWidth <= 1024 ? "top 60%" : "20% 60%";
   const ToggleAction = "play pause resume reverse";
 
-  paras.forEach((para: ParaElement) => {
+  // 🔹 PARAGRAPHS
+  paras.forEach((para) => {
     para.classList.add("visible");
+
     if (para.anim) {
       para.anim.progress(1).kill();
       para.split?.revert();
     }
 
-    para.split = new SplitText(para, {
+    const splitInstance = new SplitText(para, {
       type: "lines,words",
       linesClass: "split-line",
     });
 
+    para.split = splitInstance;
+
     para.anim = gsap.fromTo(
-      para.split.words,
+      splitInstance.words || [], // ✅ SAFE
       { autoAlpha: 0, y: 80 },
       {
         autoAlpha: 1,
@@ -48,17 +53,23 @@ export default function setSplitText() {
       }
     );
   });
-  titles.forEach((title: ParaElement) => {
+
+  // 🔹 TITLES
+  titles.forEach((title) => {
     if (title.anim) {
       title.anim.progress(1).kill();
       title.split?.revert();
     }
-    title.split = new SplitText(title, {
+
+    const splitInstance = new SplitText(title, {
       type: "chars,lines",
       linesClass: "split-line",
     });
+
+    title.split = splitInstance;
+
     title.anim = gsap.fromTo(
-      title.split.chars,
+      splitInstance.chars || [], // ✅ SAFE
       { autoAlpha: 0, y: 80, rotate: 10 },
       {
         autoAlpha: 1,
@@ -76,5 +87,7 @@ export default function setSplitText() {
     );
   });
 
-  ScrollTrigger.addEventListener("refresh", () => setSplitText());
+  // 🔹 Avoid infinite loop issue
+  ScrollTrigger.removeEventListener("refresh", setSplitText);
+  ScrollTrigger.addEventListener("refresh", setSplitText);
 }
